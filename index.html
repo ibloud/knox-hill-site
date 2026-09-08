@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knox Hill | Official Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --secondary-text: #a0a0a0;
+            --accent-color: #ffffff;
+            --highlight: #ff0000;
+            --card-bg: #111111;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .logo span { color: var(--highlight); }
+
+        nav ul { list-style: none; display: flex; gap: 2.5rem; }
+        nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--text-color); }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 6rem 5% 2rem;
+            position: relative;
+            background: radial-gradient(circle at top right, #1a1a1a 0%, #000000 70%);
+        }
+
+        .hero-content { max-width: 800px; z-index: 2; width: 100%; }
+
+        .hero-tag {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            color: var(--highlight);
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 6rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #fff 0%, #777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* --- Video Section (New) --- */
+        .video-showcase {
+            width: 100%;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            padding: 0 5%;
+            box-sizing: border-box;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #333;
+            background: #000;
+        }
+
+        .video-container video,
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Sections --- */
+        .section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .threats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .threat-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid #222;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .threat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 0%;
+            background: var(--highlight);
+            transition: height 0.4s ease;
+        }
+
+        .threat-card:hover { transform: translateY(-10px); border-color: #444; }
+        .threat-card:hover::before { height: 100%; }
+
+        .card-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #222;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .threat-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .threat-card p {
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 4rem;
+        }
+
+        .socials { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .socials a { color: #555; text-decoration: none; font-size: 1rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .socials a:hover { color: var(--text-color); }
+
+        .copyright { color: #444; font-size: 0.8rem; letter-spacing: 1px; }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .section { padding: 5rem 5%; }
+            .threats-grid { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">KNOX<span>HILL</span></a>
+        <nav>
+            <ul>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#soccer">Soccer</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero & Video -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-tag">Pro Footballer • Rapper • Creator</div>
+            <h1>The<br>Triple<br>Threat</h1>
+            <p>From the pitches of England's National League to the recording studio. Knox Hill seamlessly blends his professional soccer background, lyrical rap flows, and elite technical analysis into one unstoppable brand.</p>
+            <a href="#music" class="btn">Explore the Journey</a>
+            
+            <!-- VIDEO SECTION -->
+            <div class="video-showcase">
+                <div class="video-container">
+                    <!-- INSTRUCTIONS: If it's a YouTube video, replace the line below with an <iframe> like: -->
+                    <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Knox Hill" frameborder="0" allowfullscreen></iframe> -->
+                    
+                    <!-- If it's a raw video file (like an .mp4), use this format: -->
+                    <video controls poster="https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=2070&auto=format&fit=crop">
+                        <source src="YOUR_VIDEO_URL_OR_EMBED_CODE.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <!-- END VIDEO SECTION -->
+        </div>
+    </section>
+
+    <!-- The Triple Threat -->
+    <section class="section" id="music">
+        <div class="section-header">
+            <h2 class="section-title">The Three Pillars</h2>
+            <div class="section-subtitle">Music • Sports • Media</div>
+        </div>
+        
+        <div class="threats-grid">
+            <div class="threat-card">
+                <div class="card-number">01</div>
+                <h3>Rap & Music</h3>
+                <p>An independent lyricist, Knox translates the competitive drive of sports into his music. Known for projects like <em>Samurai X</em>, he pairs fast-paced flows with high-level production, frequently blending his music with sports culture on TikTok and X.</p>
+            </div>
+            
+            <div class="threat-card">
+                <div class="card-number">02</div>
+                <h3>Soccer Journey</h3>
+                <p>Before the mic, there was the pitch. Knox played professionally across the globe, with notable stints in Canada, Spain, Italy, Malta, and AFC Fylde in England. An ankle injury forced an early retirement, creating the pivot to his current multi-faceted career.</p>
+            </div>
+
+            <div class="threat-card">
+                <div class="card-number">03</div>
+                <h3>Ex-Pro Analysis</h3>
+                <p>Leveraging his real playing experience, Knox provides deep-dive YouTube breakdowns of players like Messi and Ronaldo. He also collaborates with the Goluremi training platform, creating music and content that bridges entertainment and tactical education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section class="section" id="soccer">
+        <div class="section-header">
+            <h2 class="section-title">The Career Path</h2>
+            <div class="section-subtitle">Global Football Journey</div>
+        </div>
+
+        <div class="timeline-container" style="border-left: 1px solid #333; padding-left: 3rem;">
+            <div class="timeline-item" style="position: relative; margin-bottom: 3rem;">
+                <div style="font-family: 'Oswald'; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; font-size: 0.85rem;">England</div>
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">AFC Fylde (National League)</div>
+                <div style="color: var(--secondary-text);">Competing in the 5th tier of English football, Knox experienced the physical and fast-paced nature of the UK game.</div>
+            </div>
+            <div class="timeline-item" style="position: relative; margin-bottom: 3rem;">
+                <div style="font-family: 'Oswald'; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; font-size: 0.85rem;">Europe</div>
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Italy & Spain</div>
+                <div style="color: var(--secondary-text);">Stints across Southern Europe added tactical rigor and technical flair to his playing style.</div>
+            </div>
+            <div class="timeline-item" style="position: relative; margin-bottom: 3rem;">
+                <div style="font-family: 'Oswald'; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; font-size: 0.85rem;">The Pivot</div>
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">Retirement & Rebirth</div>
+                <div style="color: var(--secondary-text);">Recurring ankle injuries forced retirement. Instead of stepping away from the game, Knox merged his soccer IQ with his musical talents to build a unique digital brand.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="connect">
+        <div class="socials">
+            <a href="https://www.knoxhillmusic.com" target="_blank" style="color: var(--text-color); font-weight: bold;">Official Website: knoxhillmusic.com</a>
+            <a href="https://www.youtube.com/@KnoxHill" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@knoxhilldmv" target="_blank">TikTok</a>
+            <a href="https://x.com/theknoxhill" target="_blank">X / Twitter</a>
+        </div>
+        <div class="copyright">&copy; 2024 Knox Hill Fan Showcase. Designed to reflect the artist's brand.</div>
+    </footer>
+
+</body>
+</html>
