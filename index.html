@@ -122,7 +122,7 @@
             color: var(--bg-color);
         }
 
-        /* --- Video Section (New) --- */
+        /* --- Video Section --- */
         .video-showcase {
             width: 100%;
             max-width: 1000px;
@@ -228,12 +228,68 @@
             line-height: 1.7;
         }
 
+        /* --- Receipts/Sources Section --- */
+        .receipts-section {
+            padding: 6rem 5%;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .receipts-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .receipts-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .receipts-desc {
+            color: var(--secondary-text);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .receipts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .receipt-link {
+            display: block;
+            padding: 2rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .receipt-link:hover {
+            border-color: var(--highlight);
+            transform: translateY(-5px);
+        }
+        .receipt-link h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .receipt-link p {
+            color: var(--highlight);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* --- Footer --- */
         footer {
             padding: 4rem 5%;
             text-align: center;
             border-top: 1px solid #222;
-            margin-top: 4rem;
+            margin-top: 0;
         }
 
         .socials { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
@@ -259,7 +315,7 @@
             <ul>
                 <li><a href="#music">Music</a></li>
                 <li><a href="#soccer">Soccer</a></li>
-                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#receipts">Receipts</a></li>
                 <li><a href="#connect">Connect</a></li>
             </ul>
         </nav>
@@ -276,11 +332,7 @@
             <!-- VIDEO SECTION -->
             <div class="video-showcase">
                 <div class="video-container">
-                    <!-- INSTRUCTIONS: If it's a YouTube video, replace the line below with an <iframe> like: -->
-                    <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Knox Hill" frameborder="0" allowfullscreen></iframe> -->
-                    
-                    <!-- If it's a raw video file (like an .mp4), use this format: -->
-                                        <!-- Google Drive Video Embed -->
+                    <!-- Google Drive Video Embed -->
                     <iframe src="https://drive.google.com/file/d/1q1HCbbOkSQA_rk4X7G10MCtOwYzsgyC8/preview" title="Knox Hill Soccer & Rap" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
             </div>
@@ -342,10 +394,42 @@
         </div>
     </section>
 
+    <!-- THE RECEIPTS SECTION (NEW) -->
+    <section class="receipts-section" id="receipts">
+        <div class="receipts-content">
+            <h2 class="receipts-title">The Receipts</h2>
+            <p class="receipts-desc">Don't just take his word for it. Knox's global football journey and unique crossover into media are documented by reputable platforms and his own content archives.</p>
+            
+            <div class="receipts-grid">
+                <a href="https://urbanpitch.com/football-music-back-knox-hills-career-come-full-circle/" target="_blank" class="receipt-link">
+                    <h4>UrbanPitch Feature</h4>
+                    <p>Read the Interview</p>
+                </a>
+                <a href="https://merrickcreative.com/unglossy/knox-hill" target="_blank" class="receipt-link">
+                    <h4>Merrick Creative</h4>
+                    <p>Unglossy Profile</p>
+                </a>
+                <a href="https://www.youtube.com/watch?v=MHveSsrQeIo" target="_blank" class="receipt-link">
+                    <h4>Messi Breakdown</h4>
+                    <p>Watch the Analysis</p>
+                </a>
+                <a href="https://www.tiktok.com/@knoxhilldmv/video/7378947562864266529" target="_blank" class="receipt-link">
+                    <h4>Rap & Footwork</h4>
+                    <p>View TikTok Clip</p>
+                </a>
+                <a href="https://x.com/theknoxhill/status/2029281991829704719" target="_blank" class="receipt-link">
+                    <h4>X (Twitter) Clip</h4>
+                    <p>View Post</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="connect">
         <div class="socials">
             <a href="https://www.knoxhillmusic.com" target="_blank" style="color: var(--text-color); font-weight: bold;">Official Website: knoxhillmusic.com</a>
+            <a href="https://linktr.ee/knoxhill" target="_blank" style="color: var(--text-color); font-weight: bold;">Linktree / Patreon</a>
             <a href="https://www.youtube.com/@KnoxHill" target="_blank">YouTube</a>
             <a href="https://www.tiktok.com/@knoxhilldmv" target="_blank">TikTok</a>
             <a href="https://x.com/theknoxhill" target="_blank">X / Twitter</a>
