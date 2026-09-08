@@ -50,7 +50,7 @@ The GitHub Pages site (`index.html`) features a modern, dark-mode aesthetic refl
 This site is a fan-driven initiative to protect and showcase Knox Hill's work. To support him directly and bypass platform restrictions, visit his official channels and Patreon:
 
 *   **Official Website:** [knoxhillmusic.com](https://www.knoxhillmusic.com)
-*   **Patreon & All Links:** [linktr.ee/knoxhill](https://linktr.ee/knoxhill)
+*   **Patreon:** [KH](https://www.patreon.com/knoxhill)
 *   **YouTube:** [@KnoxHill](https://www.youtube.com/@KnoxHill)
 *   **TikTok:** [@knoxhilldmv](https://www.tiktok.com/@knoxhilldmv)
 *   **X (Twitter):** [@theknoxhill](https://x.com/theknoxhill)
