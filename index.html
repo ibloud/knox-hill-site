@@ -28,7 +28,7 @@
             background-image: radial-gradient(circle at 50% 30%, #1c1917 0%, #050505 100%);
         }
 
-        /* --- Classified Header --- */
+        /* --- Classified Top Header --- */
         .top-bar {
             background: #000;
             border-bottom: 2px solid var(--stamp-red);
@@ -57,7 +57,7 @@
             50% { opacity: 0.4; }
         }
 
-        /* --- Navigation --- */
+        /* --- Main Navigation --- */
         header {
             padding: 2rem 5% 1rem;
             display: flex;
@@ -87,7 +87,7 @@
         }
         nav a:hover { color: var(--stamp-red); }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section & Media Holder --- */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -145,31 +145,31 @@
             box-shadow: 6px 6px 0 #000;
         }
 
-        /* --- Video Showcase --- */
+        /* --- Vertical Video Player Component --- */
         .video-showcase {
             width: 100%;
-            max-width: 900px;
-            margin: 3rem auto;
-            border: 8px solid #1c1917;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            max-width: 380px;
+            margin: 3rem auto 0;
+            border: 6px solid #1c1917;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 15px rgba(204, 34, 34, 0.3);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
         }
 
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
             background: #000;
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        /* --- Interactive Corkboard Section --- */
+        /* --- Evidence Corkboard Section --- */
         .section {
             padding: 6rem 5%;
             max-width: 1200px;
@@ -252,7 +252,7 @@
             color: #333;
         }
 
-        /* --- Redacted Text --- */
+        /* --- Redacted Hover Effects --- */
         .redacted {
             background: #000;
             color: #000;
@@ -267,7 +267,7 @@
             font-weight: bold;
         }
 
-        /* --- Dossier CTA Folder --- */
+        /* --- Dossier Pre-Save Box --- */
         .dossier-cta {
             background: var(--paper-manila);
             color: var(--ink-black);
@@ -284,7 +284,7 @@
             margin-bottom: 1rem;
         }
 
-        /* --- Receipts / Sources Section --- */
+        /* --- Verified Receipts Grid --- */
         .receipts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -379,14 +379,18 @@
         <h1>WHO IS D.B. COOPER?</h1>
         <p>From the pitch to the mic. Knox Hill pairs technical fast-flow rap with cinematic storytelling, taking on the persona of history's most notorious unpinned suspect.</p>
         <a href="#dossier" class="btn">INSPECT THE EVIDENCE</a>
-    </section>
 
-    <!-- Video Teaser Container -->
-    <div class="video-showcase">
-        <div class="video-container">
-            <iframe src="https://drive.google.com/file/d/1GIfVM6PScccIdOs97ewN4mNEV7nZmvqz/view?usp=share_link" title="Knox Hill Video" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <!-- Embedded Native Video Container -->
+        <div class="video-showcase">
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline>
+                    <source src="1789379632256_instaPV.mp4" type="video/mp4">
+                    <source src="1789379632256_instaPV_2.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video streaming.
+                </video>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- The Corkboard Evidence Grid -->
     <section class="section" id="dossier">
@@ -417,7 +421,7 @@
                 <div class="pin"></div>
                 <div class="card-tag">EXHIBIT C // MEDIA</div>
                 <h3>EX-PRO ANALYSIS</h3>
-                <p>Pioneering tactical tactical analysis for over 950K YouTube subscribers, bridging high-level sports breakdowns with hip-hop entertainment culture.</p>
+                <p>Pioneering tactical analysis for over 950K YouTube subscribers, bridging high-level sports breakdowns with hip-hop entertainment culture.</p>
             </article>
         </div>
 
