@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knox Hill | Project NORJAK — D.B. Cooper Concept</title>
-    <meta name="description" content="An independent Project NORJAK concept site inspired by Knox Hill's D.B. Cooper storytelling.">
+    <meta name="description" content="Project NORJAK release archive for Knox Hill's D.B. Cooper — official music video, direct purchase, and release information.">
     <meta property="og:title" content="Knox Hill | Project NORJAK — D.B. Cooper Concept">
-    <meta property="og:description" content="An independent Project NORJAK concept site inspired by Knox Hill's D.B. Cooper storytelling.">
+    <meta property="og:description" content="Project NORJAK release archive for Knox Hill's D.B. Cooper — official music video, direct purchase, and release information.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ibloud.github.io/knox-hill-site/">
     <meta property="og:image" content="https://ibloud.github.io/knox-hill-site/assets/social-preview.png">
@@ -156,6 +156,21 @@
             box-shadow: 6px 6px 0 #000;
         }
 
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--stamp-red);
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        .btn-secondary:hover { background: var(--stamp-red); }
+
         /* --- Vertical Video Player Component --- */
         .video-showcase {
             width: 100%;
@@ -174,9 +189,11 @@
             background: #000;
         }
 
-        .video-container video {
+        .video-container iframe {
             width: 100%;
-            height: auto;
+            aspect-ratio: 9 / 16;
+            min-height: 620px;
+            border: 0;
             display: block;
         }
 
@@ -361,6 +378,9 @@
             nav ul { display: none; }
             .hero h1 { font-size: 3.5rem; }
             .corkboard { padding: 20px; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .btn { width: 100%; text-align: center; }
+            .video-container iframe { min-height: 560px; }
         }
     </style>
 </head>
@@ -368,8 +388,8 @@
 
     <div class="top-bar">
         <div>FBI FIELD OFFICE // NORJAK CASE FILE #305</div>
-        <div>STATUS: <span class="status-badge">UNSOLVED / ACTIVE</span></div>
-        <div>RELEASE DATE: 25TH SEPT</div>
+        <div>STATUS: <span class="status-badge">RELEASED / ACTIVE</span></div>
+        <div>RELEASED: 25TH SEPT</div>
     </div>
 
     <header>
@@ -377,6 +397,7 @@
         <nav>
             <ul>
                 <li><a href="#dossier">Dossier</a></li>
+                <li><a href="#release">Release</a></li>
                 <li><a href="#timeline">Flight Log</a></li>
                 <li><a href="#receipts">Receipts</a></li>
                 <li><a href="#connect">Connect</a></li>
@@ -386,19 +407,18 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-tag">THE MANHUNT CONTINUES...</div>
-        <h1>WHO IS D.B. COOPER?</h1>
-        <p>From the pitch to the mic. Knox Hill pairs technical fast-flow rap with cinematic storytelling, taking on the persona of history's most notorious unpinned suspect.</p>
-        <a href="#dossier" class="btn">INSPECT THE EVIDENCE</a>
+        <div class="hero-tag">THE CASE FILE IS LIVE // MUSIC + VIDEO RELEASED</div>
+        <h1>D.B. COOPER</h1>
+        <p>Knox Hill turns the unsolved hijacking into a cinematic rap story. The song and music video are now released — inspect the case, watch the film, and support the music directly.</p>
+        <div class="hero-actions">
+            <a href="https://youtu.be/U2cB0M6xmmw" target="_blank" rel="noopener noreferrer" class="btn">WATCH THE MUSIC VIDEO</a>
+            <a href="https://knoxhilldmv.bandcamp.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">BUY ON BANDCAMP</a>
+        </div>
 
-        <!-- Embedded Native Video Container -->
+        <!-- Released Music Video -->
         <div class="video-showcase">
             <div class="video-container">
-                <video controls autoplay muted loop playsinline>
-                    <source src="1789379632256_instaPV.mp4" type="video/mp4">
-                    <source src="1789379632256_instaPV_2.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video streaming.
-                </video>
+                <iframe src="https://www.youtube.com/embed/U2cB0M6xmmw" title="Knox Hill — D.B. Cooper Official Music Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -436,11 +456,42 @@
             </article>
         </div>
 
-        <!-- Pre-Save Dossier Action -->
+        <!-- Released Dossier Action -->
         <div class="dossier-cta">
-            <h2>DECLASSIFY THE FULL SINGLE // SEP 25</h2>
-            <p>Intercept the official release of <em>D.B. Cooper</em> (feat. Crypt) on Spotify and Apple Music upon worldwide drop.</p>
-            <a href="https://www.knoxhillmusic.com" target="_blank" class="btn" style="margin-top: 1.5rem;">PRE-SAVE SINGLE</a>
+            <h2>CASE FILE RELEASED // SEPT 25</h2>
+            <p><em>D.B. Cooper</em> is out now. Watch the official music video, then support the release directly through Knox Hill's Bandcamp.</p>
+            <div class="hero-actions" style="justify-content:flex-start; margin-top:1.5rem;">
+                <a href="https://knoxhilldmv.bandcamp.com" target="_blank" rel="noopener noreferrer" class="btn">BUY / DOWNLOAD ON BANDCAMP</a>
+                <a href="https://knoxhillmusic.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">KNOX HILL</a>
+            </div>
+            <p style="margin-top:1.5rem; font-size:0.9rem;"><strong>NEXT BANDCAMP FRIDAY:</strong> OCTOBER 2, 2026 — Bandcamp's next scheduled Bandcamp Friday.</p>
+        </div>
+    </section>
+
+    <!-- Release / Direct Support -->
+    <section class="section" id="release">
+        <div class="section-header">
+            <h2 class="section-title">RELEASE STATUS</h2>
+            <p style="color: var(--secondary-text);">The investigation is now a released work: watch, listen, and support directly.</p>
+        </div>
+
+        <div class="receipts-grid">
+            <a href="https://youtu.be/U2cB0M6xmmw" target="_blank" rel="noopener noreferrer" class="receipt-link">
+                <h4>Official Music Video</h4>
+                <p>Watch on YouTube</p>
+            </a>
+            <a href="https://knoxhilldmv.bandcamp.com" target="_blank" rel="noopener noreferrer" class="receipt-link">
+                <h4>Direct Purchase</h4>
+                <p>Knox Hill on Bandcamp</p>
+            </a>
+            <a href="https://knoxhillmusic.com" target="_blank" rel="noopener noreferrer" class="receipt-link">
+                <h4>Knox Hill</h4>
+                <p>Official Site</p>
+            </a>
+            <a href="https://daily.bandcamp.com/features/bandcamp-fridays" target="_blank" rel="noopener noreferrer" class="receipt-link">
+                <h4>Next Bandcamp Friday</h4>
+                <p>October 2, 2026</p>
+            </a>
         </div>
     </section>
 
